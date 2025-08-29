@@ -35,3 +35,8 @@ func (c *Client) SimpleSendWithSystem(ctx context.Context, system, message strin
 
 	return c.Send(ctx, req)
 }
+
+// SetModel sets the default model for the client
+func (c *Client) SetModel(model string) {
+	c.config.DefaultModel = model
+}
