@@ -28,3 +28,6 @@ const (
 	// Gpt4OMini is a smaller and faster version of Gpt4O.
 	Gpt4OMini = "gpt-4o-mini"
 )
+
+// DefaultModel is the default model used by the client.
+var DefaultModel = Gpt4OMini

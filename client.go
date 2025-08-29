@@ -16,6 +16,7 @@ type Config struct {
 	BaseURL        string
 	APIKey         string
 	OrganizationID string
+	DefaultModel   string
 }
 
 // NewClient creates a new Client with the provided API key.
@@ -27,8 +28,9 @@ func NewClient(apikey string) (*Client, error) {
 	return &Client{
 		client: &http.Client{},
 		config: &Config{
-			BaseURL: DefaultapiURL,
-			APIKey:  apikey,
+			BaseURL:      DefaultapiURL,
+			APIKey:       apikey,
+			DefaultModel: DefaultModel,
 		},
 	}, nil
 }
