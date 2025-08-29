@@ -1,5 +1,24 @@
-// Package main implements a simple send message as a simple string to OpenAI's API.
+// Pacckage main implements a ssend chat request to OpenAI API.
 package main
 
+import (
+	"context"
+	"fmt"
+	"os"
+
+	"github.com/podanypepa/chatgpt"
+)
+
 func main() {
+	client, err := chatgpt.NewClient(os.Getenv("OPENAI_API_KEY"))
+	if err != nil {
+		panic(err)
+	}
+
+	res, err := client.SimpleSend(context.TODO(), "Hello, how are you?")
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(res.Choices[0].Message.Content)
 }
