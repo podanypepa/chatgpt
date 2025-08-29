@@ -27,3 +27,5 @@ func main() {
 }
 
 ```
+
+More examples in [examples](./examples) directory.
