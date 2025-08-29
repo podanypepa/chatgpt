@@ -42,6 +42,7 @@ func NewClientWithConfig(config *Config) (*Client, error) {
 	}
 
 	config.BaseURL = cmp.Or(config.BaseURL, DefaultapiURL)
+	config.DefaultModel = cmp.Or(config.DefaultModel, DefaultModel)
 
 	return &Client{
 		client: &http.Client{},
