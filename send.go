@@ -14,7 +14,7 @@ func (c *Client) Send(ctx context.Context, req *ChatRequest) (*ChatResponse, err
 		return nil, fmt.Errorf("invalid request: %w", err)
 	}
 
-	reqBytes, err := json.MarshalIndent(req, "", "  ")
+	reqBytes, err := json.Marshal(req)
 	if err != nil {
 		return nil, fmt.Errorf("failed to marshal request: %w", err)
 	}
