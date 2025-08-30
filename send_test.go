@@ -27,4 +27,5 @@ func TestSend(t *testing.T) {
 	assert.NotNil(t, resp)
 
 	fmt.Println(resp.Choices[0].Message.Content)
+	fmt.Println("total tokens:", resp.Usage.TotalTokens)
 }
