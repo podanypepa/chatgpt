@@ -2,6 +2,7 @@ package chatgpt
 
 import (
 	"cmp"
+	"fmt"
 	"net/http"
 )
 
@@ -22,7 +23,7 @@ type Config struct {
 // NewClient creates a new Client with the provided API key.
 func NewClient(apikey string) (*Client, error) {
 	if apikey == "" {
-		return nil, nil
+		return nil, fmt.Errorf("API key is required")
 	}
 
 	return &Client{
@@ -38,7 +39,7 @@ func NewClient(apikey string) (*Client, error) {
 // NewClientWithConfig creates a new Client with the provided configuration.
 func NewClientWithConfig(config *Config) (*Client, error) {
 	if config.APIKey == "" {
-		return nil, nil
+		return nil, fmt.Errorf("API key is required")
 	}
 
 	config.BaseURL = cmp.Or(config.BaseURL, DefaultapiURL)
