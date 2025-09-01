@@ -31,3 +31,20 @@ const (
 
 // DefaultModel is the default model used by the client.
 var DefaultModel = Gpt4OMini
+
+// AllModels is a list of all available models.
+var AllModels = []string{
+	Gpt5,
+	Gpt5mini,
+	Gpt5nano,
+	Gpt4_1,
+	Gpt4_1Mini,
+	Gpt4_1Nano,
+	GptO3DeepResearch,
+	GptO4MiniDeepResearch,
+	GptO3Pro,
+	GptO3,
+	GptO4Mini,
+	Gpt4O,
+	Gpt4OMini,
+}
